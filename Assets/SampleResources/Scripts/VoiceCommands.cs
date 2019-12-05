@@ -39,10 +39,10 @@ public class VoiceCommands : MonoBehaviour
         m_VoiceKeywordAnimator = GetComponentInChildren<Animator>();
 
         // Setup the Keyword Commands
-        //SetupKeywordCommands();
-        //m_KeywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
-        //m_KeywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
-        //m_KeywordRecognizer.Start();
+        SetupKeywordCommands();
+        m_KeywordRecognizer = new KeywordRecognizer(keywords.Keys.ToArray());
+        m_KeywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
+        m_KeywordRecognizer.Start();
     }
 
     #endregion //MONOBEHAVIOUR_METHODS
