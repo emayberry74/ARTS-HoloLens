@@ -85,6 +85,7 @@
      <Compile Include="Assets\HoloToolkit\Utilities\Scripts\FixedAngularSize.cs" />
      <Compile Include="Assets\HoloToolkit\Utilities\Scripts\SimpleTagalong.cs" />
      <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Tagalong.cs" />
+     <Compile Include="Assets\MovePls\Move.cs" />
      <Compile Include="Assets\SampleResources\SceneAssets\ModelTargets\Scripts\DepthCanvas.cs" />
      <Compile Include="Assets\SampleResources\SceneAssets\ModelTargets\Scripts\ModelTargetsManager.cs" />
      <Compile Include="Assets\SampleResources\SceneAssets\ModelTargets\Scripts\ModelTargetsUIManager.cs" />
