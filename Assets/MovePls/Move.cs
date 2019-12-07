@@ -15,7 +15,8 @@ public class Move : MonoBehaviour
     int fromWaypointIndex;
     //% between 0 and 1
     float percentBetweenWaypoints;
-    public bool stop;
+    public static bool stop;
+    public bool stop1;
     //public GameObject gb;
 
     public Vector3[] localWaypoints;
@@ -31,7 +32,8 @@ public class Move : MonoBehaviour
     }
     public void Update()
     {
-        if(!stop)
+        stop = stop1;
+        if(!stop1)
         {
             Vector3 velocity = CalculatePlatformMovement();
             transform.Translate(velocity);
