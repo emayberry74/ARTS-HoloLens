@@ -53,7 +53,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Animation_Script.cs" />
      <Compile Include="Assets\AnimationControl.cs" />
+     <Compile Include="Assets\AnimationPickup.cs" />
      <Compile Include="Assets\BzKovSoft\RagdollTemplate\Scripts\Charachter\BzHealth.cs" />
      <Compile Include="Assets\BzKovSoft\RagdollTemplate\Scripts\Charachter\BzRagdoll.cs" />
      <Compile Include="Assets\BzKovSoft\RagdollTemplate\Scripts\Charachter\BzThirdPersonBase.cs" />
@@ -119,6 +121,7 @@
      <Compile Include="Assets\SampleResources\Scripts\MainMenu.cs" />
      <Compile Include="Assets\SampleResources\Scripts\Versions.cs" />
      <Compile Include="Assets\SampleResources\Scripts\VoiceCommands.cs" />
+     <Compile Include="Assets\Script.cs" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
      <None Include="Assets\Vuforia\Shaders\CameraDiffuse.shader" />
      <None Include="Assets\Common\TextMeshPro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />

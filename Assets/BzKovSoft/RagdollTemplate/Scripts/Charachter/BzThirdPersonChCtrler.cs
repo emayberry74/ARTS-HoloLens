@@ -17,7 +17,7 @@ namespace BzKovSoft.RagdollTemplate.Scripts.Charachter
 			if (GetComponent<Rigidbody>() != null)
 				Debug.LogWarning("You do not needed to attach 'rigidbody' to controller with 'CharacterController'");
 		}
-
+        
 		public override void CharacterEnable(bool enable)
 		{
 			base.CharacterEnable(enable);

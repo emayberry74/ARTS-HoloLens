@@ -14,6 +14,9 @@ namespace BzKovSoft.RagdollTemplate.Scripts.Charachter
 		private bool _crouch;
         public float forwardVar;
         public double sidways;
+        public GameObject holder;
+        public GameObject square;
+        public Transform backpack;
 
 		private void Start()
 		{
@@ -26,11 +29,44 @@ namespace BzKovSoft.RagdollTemplate.Scripts.Charachter
 			_health = GetComponent<IBzDamageable>();
 			_ragdoll = GetComponent<IBzRagdoll>();
 		}
+        private bool inventoryFull = false;
+        public Transform guide;
+        private bool onlyOnce = true;
+        void OnControllerColliderHit(ControllerColliderHit hit)
+        {
+            GameObject box = hit.gameObject;
+            if (hit.transform.tag == "box")
+            {
 
-		void Update()
+                _character.Move(Vector3.zero, true, _jumpPressed);
+                box.transform.parent = holder.transform;
+                box.transform.position = backpack.position;
+                inventoryFull = true;
+            }
+
+            if(hit.transform.tag == "trig")
+            {
+                //HA DO MATH
+                if(onlyOnce)
+                {
+                    
+                    _character.Move(Vector3.zero, _crouch, true);
+                    
+                    onlyOnce = false;
+                }
+                square.transform.position = guide.position;
+               
+
+            }
+        }
+        void Update()
 		{
 			// read user input: jump, fire and crouch
 
+            if(inventoryFull)
+            {
+                square.transform.position = backpack.position;
+            }
 			if (!_jumpPressed)
 				_jumpPressed = Input.GetButtonDown("Jump");
 			if (!_fire)

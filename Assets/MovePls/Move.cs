@@ -17,12 +17,15 @@ public class Move : MonoBehaviour
     float percentBetweenWaypoints;
     public static bool stop;
     public bool stop1;
+    public static bool stoppls = false;
     //public GameObject gb;
 
     public Vector3[] localWaypoints;
     Vector3[] globalWaypoints;
+    
     public void Start()
     {
+        //stop1 = false;
         Debug.Log("hit");
         globalWaypoints = new Vector3[localWaypoints.Length];
         for (int i = 0; i < localWaypoints.Length; i++)
@@ -33,7 +36,7 @@ public class Move : MonoBehaviour
     public void Update()
     {
         stop = stop1;
-        if(!stop1)
+        if(!stop1 && !stoppls)
         {
             Vector3 velocity = CalculatePlatformMovement();
             transform.Translate(velocity);
@@ -45,18 +48,23 @@ public class Move : MonoBehaviour
         return Mathf.Pow(x, a) / (Mathf.Pow(x, a) + Mathf.Pow(1 - x, a));
     }
 
-
+    bool test = true;
     Vector3 CalculatePlatformMovement()
     {
+        
         if (Time.time < nextMoveTime)
         {
             //Debug.Log("hit");
+            stop = true;
+            
+            //Debug.Log("Counter" + counter);
             return Vector3.zero;
             
         }
         if (globalWaypoints.Length != 0)
         {
             //Debug.Log("hit");
+            stop1 = false;
             fromWaypointIndex %= globalWaypoints.Length;
             int toWaypointIndex = (fromWaypointIndex + 1) % globalWaypoints.Length;
             float distanceBetweenWaypoints = Vector3.Distance(globalWaypoints[fromWaypointIndex], globalWaypoints[toWaypointIndex]);
@@ -88,6 +96,10 @@ public class Move : MonoBehaviour
         
         return new Vector3(0, 0, 0);
     }
+    /*public static void VeryStop()
+    {
+        stoppls = true;
+    }*/
     private void OnDrawGizmos()
     {
 
@@ -106,5 +118,6 @@ public class Move : MonoBehaviour
             }
         }
     }
+    
 }
 
