@@ -46,6 +46,7 @@ namespace BzKovSoft.RagdollTemplate.Scripts.Charachter
 
             if(hit.transform.tag == "trig")
             {
+                inventoryFull = false;
                 //HA DO MATH
                 if(onlyOnce)
                 {
